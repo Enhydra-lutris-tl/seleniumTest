@@ -21,12 +21,15 @@ class QmyWidget(QWidget):
 
         # QPushButton组件示例
         self.button1 = QPushButton('测试按钮', self)
+        self.button1.setProperty('name', 'btn1')
         self.button2 = QPushButton('自动发信息', self)
+        self.button2.setProperty('name', 'btn2')
         self.input1 = QLineEdit("hello", self)
         # QPushButton组件设置
         self.button1.setEnabled(False)  # button1设置按钮不可用
         self.button2.setIcon(QIcon('logo.png'))  # button2设置按钮图标
-        self.button2.resize(200, 100)
+        # self.button2.resize(200, 100)
+        self.button2.move(200, 300)
         # QPushButton关联信号
         self.button2.clicked.connect(self.on_button2_clicked)  # button2按钮关联点击信号
         # 输入组件设置
@@ -50,5 +53,21 @@ class QmyWidget(QWidget):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     myMain = QmyWidget()
+    qssStyle = '''
+            QPushButton[name="btn1"] { 
+                background-color:red;
+                color:yellow;
+                height:120;
+                font-size:60px;
+            }
+            QPushButton[name="btn2"] {
+                background-color:blue;
+                color:yellow;
+                height:60;
+                width:120;
+                font-size:11px;
+            }
+            '''
+    myMain.setStyleSheet(qssStyle)
     myMain.show()
     sys.exit(app.exec_())

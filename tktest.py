@@ -53,21 +53,26 @@ class QmyWidget(QWidget):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     myMain = QmyWidget()
-    qssStyle = '''
-            QPushButton[name="btn1"] { 
-                background-color:red;
-                color:yellow;
-                height:120;
-                font-size:60px;
-            }
-            QPushButton[name="btn2"] {
-                background-color:blue;
-                color:yellow;
-                height:60;
-                width:120;
-                font-size:11px;
-            }
-            '''
-    myMain.setStyleSheet(qssStyle)
+
+    # qss引入方法
+    with open('index.qss', 'r', encoding='UTF-8') as f:
+        print('打开文件')
+        app.setStyleSheet(f.read())
+    # qssStyle = '''
+    #         QPushButton[name="btn1"] {
+    #             background-color:red;
+    #             color:yellow;
+    #             height:120;
+    #             font-size:60px;
+    #         }
+    #         QPushButton[name="btn2"] {
+    #             background-color:blue;
+    #             color:yellow;
+    #             height:60;
+    #             width:120;
+    #             font-size:11px;
+    #         }
+    #         '''
+    # myMain.setStyleSheet(qssStyle)
     myMain.show()
     sys.exit(app.exec_())

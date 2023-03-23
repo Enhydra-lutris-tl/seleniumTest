@@ -1,45 +1,29 @@
 - domain: .xiaohongshu.com
-  expiry: 1678354072
+  expiry: 1710838287
+  httpOnly: false
+  name: xsecappid
+  path: /
+  sameSite: Lax
+  secure: false
+  value: creator-creator
+- domain: .xiaohongshu.com
+  expiry: 1679907084
   httpOnly: false
   name: galaxy.creator.beaker.session.id
   path: /
   sameSite: Lax
   secure: false
-  value: '1677749272904051154119'
+  value: '1679302284503028741158'
 - domain: .xiaohongshu.com
-  expiry: 1709285252
-  httpOnly: false
-  name: webId
-  path: /
-  sameSite: Lax
-  secure: false
-  value: b0fd082cff0c2301cb6f64afeedf0f68
-- domain: .creator.xiaohongshu.com
-  expiry: 1709285272
+  expiry: 1710838284
   httpOnly: true
-  name: access-token
+  name: access-token-creator.xiaohongshu.com
   path: /
   sameSite: Lax
   secure: false
-  value: AT-d91f3f8c85a14a2591092e75e8ee86d1-9123487898844c5893172fe87a88fdef
-- domain: .creator.xiaohongshu.com
-  expiry: 1709285272
-  httpOnly: true
-  name: sso-type
-  path: /
-  sameSite: Lax
-  secure: false
-  value: customer
-- domain: .creator.xiaohongshu.com
-  expiry: 1709285272
-  httpOnly: true
-  name: subsystem
-  path: /
-  sameSite: Lax
-  secure: false
-  value: ares
+  value: customer.ares.AT-d5c63706381c459eb8082a344dc9da56-acefd41c704c4b3d9fbb3d8492e0138f
 - domain: .xiaohongshu.com
-  expiry: 1712309272
+  expiry: 1713862284
   httpOnly: true
   name: x-user-id-creator.xiaohongshu.com
   path: /
@@ -47,50 +31,50 @@
   secure: false
   value: 6184c2c900000000020244b9
 - domain: .xiaohongshu.com
-  expiry: 1712309272
+  expiry: 1713862284
   httpOnly: true
   name: customerClientId
   path: /
   sameSite: Lax
   secure: true
-  value: 089182032172456
+  value: '489120277254216'
 - domain: .xiaohongshu.com
-  expiry: 1678354072
+  expiry: 1679907084
   httpOnly: true
   name: customerBeakerSessionId
   path: /
   sameSite: Lax
   secure: false
-  value: 92f9e81a8c50d8bb9b6c9fbd415f6b7d752ef8b3gAJ9cQAoWBAAAABjdXN0b21lclVzZXJUeXBlcQFLAVgOAAAAX2NyZWF0aW9uX3RpbWVxAkdB2QAbBjGJN1gJAAAAYXV0aFRva2VucQNYQQAAADhkMzFkZmE5Nzk3NzQwYWViYzhhNmI1Mzg2MDM1NDY2LTVlZWU3NGZkOGU0YjRlZWZhYjc0ZDJhNjgyMDBjNGQzcQRYAwAAAF9pZHEFWCAAAAAzMDYzNTFkY2YxODY0OTQ0YmFlMzhkNjAwNWVmZWFkZXEGWA4AAABfYWNjZXNzZWRfdGltZXEHR0HZABsGMYk3WAYAAAB1c2VySWRxCFgYAAAANjE4NGMyYzkwMDAwMDAwMDAyMDI0NGI5cQl1Lg==
+  value: b6d189513e7de623af630956eb02374c5c837f04gAJ9cQAoWBAAAABjdXN0b21lclVzZXJUeXBlcQFLAVgOAAAAX2NyZWF0aW9uX3RpbWVxAkdB2QYHoxXztlgJAAAAYXV0aFRva2VucQNYQQAAADZkYzEyYWY1MjBhYTQ2ZWY5NTNlM2ZmODgyZDU2OGZhLTZlZGE3NDI2MGM3NjRiMmM5MDZiNDUyYzYzYjJjNTNmcQRYAwAAAF9pZHEFWCAAAAA3OTlhYzAwYzE3NGU0NTE1OTliY2VmZTE4ODI1YTEwYXEGWA4AAABfYWNjZXNzZWRfdGltZXEHR0HZBgejFfO2WAYAAAB1c2VySWRxCFgYAAAANjE4NGMyYzkwMDAwMDAwMDAyMDI0NGI5cQl1Lg==
 - domain: .xiaohongshu.com
-  expiry: 1709285252
+  expiry: 1710838270
   httpOnly: false
   name: a1
   path: /
   sameSite: Lax
   secure: false
-  value: 186a1a5f332eutg9uzwgm0juclyojpx1ghr4rcq7b30000123668
+  value: 186fe371d2c1ojqydlpruns2ry5fdyo4i6ffhl8kw30000235229
 - domain: .xiaohongshu.com
-  expiry: 1709285255
+  expiry: 1710838288
   httpOnly: true
   name: gid.sign
   path: /
   sameSite: Lax
   secure: false
-  value: rk/Ki/fmAYghE+PaH8LC+L09n+g=
+  value: iA2R2sxMhWknB+1BaoPi3oCrkTM=
 - domain: .xiaohongshu.com
-  expiry: 1709285255
+  expiry: 1710838288
   httpOnly: false
   name: gid
   path: /
   sameSite: Lax
   secure: false
-  value: yYK0y02iDYkSyYK0y02iqxSAqJd79kj7uEk6FWD8V7S1v4q8lVUCyF888yJqKKY8jJ8DS2DS
+  value: yYKidqWqqf3JyYKidqWyfK1YJSylVAvf1UF7iTEIMJFv2iq8ifvl4x888Jq2JJjJ802WYSqK
 - domain: .xiaohongshu.com
-  expiry: 1709285252
+  expiry: 1710838270
   httpOnly: false
-  name: xsecappid
+  name: webId
   path: /
   sameSite: Lax
   secure: false
-  value: creator-main
+  value: 0b4471aadd7ef31cb54d1d93c118d775

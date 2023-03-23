@@ -1,78 +1,98 @@
+#!/bin/env python3
 import sys
-import setwecat
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLineEdit
+
+from PySide6.QtCore import Qt, Signal, Slot, QThread, QRect, QSize
+from PySide6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QLineEdit, QHBoxLayout, QVBoxLayout, QStyle, QTextEdit, QMessageBox
+
+import httpx
 
 
-class QmyWidget(QWidget):
+class HtmlWorker(QThread):
 
-    def __init__(self, parent=None):
-        super().__init__(parent)  # 调用父类的构造函数，创建QWidget窗体
-        self.setupUi()
+    completed = Signal(httpx.Response)
+    failed = Signal(object)
 
-    def setupUi(self):
-        """页面初始化"""
-        # 设置窗体大小及标题
-        self.resize(500, 400)
-        self.setWindowTitle("PyQt5测试")
-        # 创建布局
-        # self.layout = QVBoxLayout()
+    def setUrl(self, url):
+        self.url = url
 
-        # QPushButton组件示例
-        self.button1 = QPushButton('测试按钮', self)
-        self.button1.setProperty('name', 'btn1')
-        self.button2 = QPushButton('自动发信息', self)
-        self.button2.setProperty('name', 'btn2')
-        self.input1 = QLineEdit("hello", self)
-        # QPushButton组件设置
-        self.button1.setEnabled(False)  # button1设置按钮不可用
-        self.button2.setIcon(QIcon('logo.png'))  # button2设置按钮图标
-        # self.button2.resize(200, 100)
-        self.button2.move(200, 300)
-        # QPushButton关联信号
-        self.button2.clicked.connect(self.on_button2_clicked)  # button2按钮关联点击信号
-        # 输入组件设置
-        self.input1.setPlaceholderText("输入内容")
-        self.input1.move(100, 20)
-        self.input1.resize(200, 60)
-        self.input1.setCursor(Qt.PointingHandCursor)
-        # 将组件添加到布局中
-        # self.layout.addWidget(self.button1)
-        # self.layout.addWidget(self.button2)
-        # self.layout.addWidget(self.input1)
-        # 为窗体添加布局
-        # self.setLayout(self.layout)
+    def run(self):
+        try:
+            resp = httpx.get(self.url, follow_redirects=True)
+        except:
+            self.failed.emit(sys.exc_info()[1])
+        else:
+            self.completed.emit(resp)
 
-    def on_button2_clicked(self):
-        """button2按钮点击槽函数"""
-        setwecat.main()
-        print("button2按钮被点击啦！")
+
+class MainWindow(QMainWindow):
+
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle('PySide6 Demo')
+        rect = self.screen().geometry()
+        size = self.size()
+        self.setGeometry(QStyle.alignedRect(Qt.LayoutDirection.LeftToRight, Qt.AlignCenter, size, rect))
+        self.htmlWorker = HtmlWorker()
+        self.htmlWorker.completed.connect(self.showMessage)
+        self.htmlWorker.failed.connect(self.showError)
+
+        # ui
+        widget = QWidget()
+        self.setCentralWidget(widget)
+
+        layout = QVBoxLayout()
+        layout.addLayout(self.makeInputLayout())
+        layout.addWidget(self.makeOutputWidget())
+        widget.setLayout(layout)
+
+    def makeInputLayout(self):
+        self.edit = QLineEdit()
+        self.edit.setPlaceholderText('请输入网址')
+        self.edit.setClearButtonEnabled(True)
+        self.btn2 = QPushButton('获取')
+        self.btn = QPushButton('&Show Html')
+        layout = QHBoxLayout()
+        layout.addWidget(self.edit)
+        layout.addWidget(self.btn2)
+        layout.addWidget(self.btn)
+        self.edit.returnPressed.connect(self.btn.click)
+        self.btn2.clicked.connect(self.ceshi)
+        self.btn.clicked.connect(self.fetchHtml)
+        return layout
+
+    def makeOutputWidget(self):
+        self.output = QTextEdit()
+        return self.output
+    @Slot()
+    def ceshi(self):
+        print(self.edit.text())
+    @Slot()
+    def fetchHtml(self):
+        if self.htmlWorker.isRunning():
+            return
+        url = self.edit.text()
+        if not url:
+            return
+        self.output.clear()
+        if not url.startswith('http'):
+            url = 'https://' + url
+        self.htmlWorker.setUrl(url)
+        self.htmlWorker.start()
+
+    @Slot(httpx.Response)
+    def showMessage(self, resp):
+        self.output.setPlainText(resp.text)
+
+    @Slot(object)
+    def showError(self, err):
+        QMessageBox.warning(self, 'error', str(err))
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    myMain = QmyWidget()
-
-    # qss引入方法
-    with open('index.qss', 'r', encoding='UTF-8') as f:
-        print('打开文件')
-        app.setStyleSheet(f.read())
-    # qssStyle = '''
-    #         QPushButton[name="btn1"] {
-    #             background-color:red;
-    #             color:yellow;
-    #             height:120;
-    #             font-size:60px;
-    #         }
-    #         QPushButton[name="btn2"] {
-    #             background-color:blue;
-    #             color:yellow;
-    #             height:60;
-    #             width:120;
-    #             font-size:11px;
-    #         }
-    #         '''
-    # myMain.setStyleSheet(qssStyle)
-    myMain.show()
-    sys.exit(app.exec_())
+    win = MainWindow()
+    win.show()
+    with open("index.qss", "r") as f:
+        _style = f.read()
+        app.setStyleSheet(_style)
+    sys.exit(app.exec())

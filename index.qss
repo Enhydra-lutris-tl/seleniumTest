@@ -1,4 +1,4 @@
-QPushButton[name="btn1"] {
+QPushButton {
     background-color:red;
     color:yellow;
     height:120;
@@ -11,10 +11,11 @@ QPushButton[name="btn2"] {
     width:120;
     font-size:11px;
 }
-QPushButton[name="btn2"]:hover {
+QPushButton[name="btn"]:hover {
     background-color:yellow;
     color:blue;
     height:60;
     width:120;
     font-size:11px;
+
 }

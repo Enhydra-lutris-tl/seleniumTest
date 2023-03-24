@@ -2,97 +2,26 @@
 import sys
 
 from PySide6.QtCore import Qt, Signal, Slot, QThread, QRect, QSize
-from PySide6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QLineEdit, QHBoxLayout, QVBoxLayout, QStyle, QTextEdit, QMessageBox
+from PySide6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QLineEdit, QHBoxLayout, QVBoxLayout, \
+    QStyle, QTextEdit, QMessageBox
 
 import httpx
 
-
-class HtmlWorker(QThread):
-
-    completed = Signal(httpx.Response)
-    failed = Signal(object)
-
-    def setUrl(self, url):
-        self.url = url
-
-    def run(self):
-        try:
-            resp = httpx.get(self.url, follow_redirects=True)
-        except:
-            self.failed.emit(sys.exc_info()[1])
-        else:
-            self.completed.emit(resp)
+import sys
+from untitled import Ui_Form
 
 
-class MainWindow(QMainWindow):
-
+class Main(QMainWindow):
     def __init__(self):
-        super().__init__()
-        self.setWindowTitle('PySide6 Demo')
-        rect = self.screen().geometry()
-        size = self.size()
-        self.setGeometry(QStyle.alignedRect(Qt.LayoutDirection.LeftToRight, Qt.AlignCenter, size, rect))
-        self.htmlWorker = HtmlWorker()
-        self.htmlWorker.completed.connect(self.showMessage)
-        self.htmlWorker.failed.connect(self.showError)
+        super(Main, self).__init__()
 
-        # ui
-        widget = QWidget()
-        self.setCentralWidget(widget)
-
-        layout = QVBoxLayout()
-        layout.addLayout(self.makeInputLayout())
-        layout.addWidget(self.makeOutputWidget())
-        widget.setLayout(layout)
-
-    def makeInputLayout(self):
-        self.edit = QLineEdit()
-        self.edit.setPlaceholderText('请输入网址')
-        self.edit.setClearButtonEnabled(True)
-        self.btn2 = QPushButton('获取')
-        self.btn = QPushButton('&Show Html')
-        layout = QHBoxLayout()
-        layout.addWidget(self.edit)
-        layout.addWidget(self.btn2)
-        layout.addWidget(self.btn)
-        self.edit.returnPressed.connect(self.btn.click)
-        self.btn2.clicked.connect(self.ceshi)
-        self.btn.clicked.connect(self.fetchHtml)
-        return layout
-
-    def makeOutputWidget(self):
-        self.output = QTextEdit()
-        return self.output
-    @Slot()
-    def ceshi(self):
-        print(self.edit.text())
-    @Slot()
-    def fetchHtml(self):
-        if self.htmlWorker.isRunning():
-            return
-        url = self.edit.text()
-        if not url:
-            return
-        self.output.clear()
-        if not url.startswith('http'):
-            url = 'https://' + url
-        self.htmlWorker.setUrl(url)
-        self.htmlWorker.start()
-
-    @Slot(httpx.Response)
-    def showMessage(self, resp):
-        self.output.setPlainText(resp.text)
-
-    @Slot(object)
-    def showError(self, err):
-        QMessageBox.warning(self, 'error', str(err))
+        # build ui
+        self.ui = Ui_Form()
+        self.ui.setupUi(self)
 
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    win = MainWindow()
-    win.show()
-    with open("index.qss", "r") as f:
-        _style = f.read()
-        app.setStyleSheet(_style)
+    main = Main()
+    main.show()
     sys.exit(app.exec())

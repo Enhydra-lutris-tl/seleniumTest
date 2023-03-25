@@ -5,7 +5,6 @@ from PySide6.QtCore import Qt, Signal, Slot, QThread, QRect, QSize
 from PySide6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QLineEdit, QHBoxLayout, QVBoxLayout, \
     QStyle, QTextEdit, QMessageBox
 
-import httpx
 
 import sys
 from untitled import Ui_Form

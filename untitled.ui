@@ -44,7 +44,7 @@ height: 900px;
 background: rgba(42, 43, 61, 1);
 </string>
    </property>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="workbench_Button">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -69,7 +69,7 @@ font-weight: 500;</string>
      <string>工作台</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="Model_Inject">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -82,8 +82,7 @@ font-weight: 500;</string>
      <cursorShape>OpenHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-border-radius: 6px;
+     <string notr="true">border-radius: 6px;
 background: rgba(42, 43, 61, 1);
 padding: 10px 16px 10px 16px;
 color: rgba(255,255,255,1);
@@ -91,7 +90,7 @@ font-size: 16px;
 font-weight: 500;</string>
     </property>
     <property name="text">
-     <string>功能1</string>
+     <string>模型导入</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -116,7 +115,7 @@ font-size: 16px;
 font-weight: 500;</string>
     </property>
     <property name="text">
-     <string>功能2</string>
+     <string>工具箱</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
@@ -280,7 +279,7 @@ color: rgba(255, 255, 255, 1);
 </string>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>QtTest</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
@@ -353,7 +352,7 @@ background: rgba(42, 43, 61, 1);
         <number>0</number>
        </property>
        <item>
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="value_label_1">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -415,7 +414,7 @@ padding:0 0 0 12px
         <number>0</number>
        </property>
        <item>
-        <widget class="QLabel" name="label_4">
+        <widget class="QLabel" name="value_label_2">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -444,7 +443,7 @@ border-radius: 2px 0 0 2px;
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_3">
+        <widget class="QLineEdit" name="value_input_2">
          <property name="minimumSize">
           <size>
            <width>360</width>
@@ -476,7 +475,7 @@ padding:0 0 0 12px</string>
         <number>0</number>
        </property>
        <item>
-        <widget class="QLabel" name="label_9">
+        <widget class="QLabel" name="value_label_3">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -511,7 +510,7 @@ border-radius: 2px 0 0 2px;
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_8">
+        <widget class="QLineEdit" name="value_input_3">
          <property name="minimumSize">
           <size>
            <width>360</width>
@@ -543,7 +542,7 @@ padding:0 0 0 12px</string>
         <number>0</number>
        </property>
        <item>
-        <widget class="QLabel" name="label_11">
+        <widget class="QLabel" name="value_label_4">
          <property name="minimumSize">
           <size>
            <width>80</width>
@@ -578,7 +577,7 @@ border-radius: 2px 0 0 2px;
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_10">
+        <widget class="QLineEdit" name="value_input_4">
          <property name="minimumSize">
           <size>
            <width>360</width>
@@ -620,7 +619,7 @@ padding:0 0 0 12px</string>
       <number>60</number>
      </property>
      <item>
-      <widget class="QPushButton" name="pushButton_10">
+      <widget class="QPushButton" name="clearnButton">
        <property name="minimumSize">
         <size>
          <width>104</width>
@@ -676,7 +675,7 @@ color: rgba(255, 255, 255, 1);
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="message_label">
     <property name="geometry">
      <rect>
       <x>545</x>

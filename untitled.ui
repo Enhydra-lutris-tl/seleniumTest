@@ -54,16 +54,21 @@ background: rgba(42, 43, 61, 1);
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>OpenHandCursor</cursorShape>
+     <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">
+     <string notr="true">QPushButton{
 border-radius: 6px;
 background: rgba(91, 133, 253, 1);
 padding: 10px 16px 10px 16px;
 color: rgba(255,255,255,1);
 font-size: 16px;
-font-weight: 500;</string>
+font-weight: 500;
+}
+QPushButton:hover{
+background: rgba(255, 255, 255, 1);
+}
+</string>
     </property>
     <property name="text">
      <string>工作台</string>
@@ -79,15 +84,21 @@ font-weight: 500;</string>
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>OpenHandCursor</cursorShape>
+     <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius: 6px;
+     <string notr="true">QPushButton{
+border-radius: 6px;
 background: rgba(42, 43, 61, 1);
 padding: 10px 16px 10px 16px;
 color: rgba(255,255,255,1);
 font-size: 16px;
-font-weight: 500;</string>
+font-weight: 500;
+}
+
+QPushButton:hover{
+background: rgba(91, 133, 253, 1);
+}</string>
     </property>
     <property name="text">
      <string>模型导入</string>
@@ -103,7 +114,7 @@ font-weight: 500;</string>
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>OpenHandCursor</cursorShape>
+     <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">
@@ -128,7 +139,7 @@ font-weight: 500;</string>
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>OpenHandCursor</cursorShape>
+     <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">
@@ -153,7 +164,7 @@ font-weight: 500;</string>
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>OpenHandCursor</cursorShape>
+     <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">
@@ -203,7 +214,7 @@ font-weight: 500;</string>
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>OpenHandCursor</cursorShape>
+     <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">
@@ -228,7 +239,7 @@ font-weight: 500;</string>
      </rect>
     </property>
     <property name="cursor">
-     <cursorShape>OpenHandCursor</cursorShape>
+     <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">
@@ -299,403 +310,476 @@ background: rgba(34, 36, 51, 1);
     </property>
    </widget>
   </widget>
-  <widget class="QWidget" name="widget" native="true">
+  <widget class="QWidget" name="widget_3" native="true">
    <property name="geometry">
     <rect>
-     <x>264</x>
-     <y>110</y>
-     <width>1146</width>
-     <height>760</height>
+     <x>230</x>
+     <y>80</y>
+     <width>1211</width>
+     <height>821</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">left: 264px;
+   <widget class="QTabWidget" name="tabWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>0</y>
+      <width>1146</width>
+      <height>820</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Tab 1</string>
+     </attribute>
+     <widget class="QWidget" name="widget_4" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1146</width>
+        <height>760</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">left: 264px;
 top: 110px;
 width: 1146px;
 height: 760px;
 border-radius: 16px;
 background: rgba(42, 43, 61, 1);
 </string>
-   </property>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>545</x>
-      <y>700</y>
-      <width>201</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color:rgb(255,255,255)</string>
-    </property>
-    <property name="text">
-     <string>此处展示计算过程及结果！</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>40</y>
-      <width>444</width>
-      <height>242</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <property name="spacing">
-      <number>24</number>
-     </property>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <property name="spacing">
-        <number>0</number>
+      </property>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>545</x>
+         <y>700</y>
+         <width>201</width>
+         <height>16</height>
+        </rect>
        </property>
-       <item>
-        <widget class="QLabel" name="value_label_1">
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>80</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: 1px solid rgba(93, 94, 107, 1);
+       <property name="styleSheet">
+        <string notr="true">color:rgb(255,255,255)</string>
+       </property>
+       <property name="text">
+        <string>此处展示计算过程及结果！</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget_4">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>40</y>
+         <width>444</width>
+         <height>242</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="spacing">
+         <number>24</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="value_label_9">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid rgba(93, 94, 107, 1);
 color:rgb(255,255,255);
 border-radius: 2px 0 0 2px;
 
 </string>
-         </property>
-         <property name="text">
-          <string>参数1</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="value_input_1">
-         <property name="minimumSize">
-          <size>
-           <width>360</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>360</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color:rgb(255,255,255);
+            </property>
+            <property name="text">
+             <string>参数1</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="value_input_9">
+            <property name="minimumSize">
+             <size>
+              <width>360</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>360</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:rgb(255,255,255);
 border-radius: 0 4px 4px 0;
 background: rgba(34, 36, 51, 1);
 padding:0 0 0 12px
 </string>
-         </property>
-         <property name="placeholderText">
-          <string>输入预估值</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QLabel" name="value_label_2">
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>80</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: 1px solid rgba(93, 94, 107, 1);
+            </property>
+            <property name="placeholderText">
+             <string>输入预估值</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="value_label_10">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid rgba(93, 94, 107, 1);
 color:rgb(255,255,255);
 border-radius: 2px 0 0 2px;
 
 </string>
-         </property>
-         <property name="text">
-          <string>参数2</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="value_input_2">
-         <property name="minimumSize">
-          <size>
-           <width>360</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>360</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color:rgb(255,255,255);
+            </property>
+            <property name="text">
+             <string>参数2</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="value_input_10">
+            <property name="minimumSize">
+             <size>
+              <width>360</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>360</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:rgb(255,255,255);
 border-radius: 0 4px 4px 0;
 background: rgba(34, 36, 51, 1);
 padding:0 0 0 12px</string>
-         </property>
-         <property name="placeholderText">
-          <string>输入预估值</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_7">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QLabel" name="value_label_3">
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>80</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="sizeIncrement">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: 1px solid rgba(93, 94, 107, 1);
+            </property>
+            <property name="placeholderText">
+             <string>输入预估值</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="value_label_11">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid rgba(93, 94, 107, 1);
 color:rgb(255,255,255);
 border-radius: 2px 0 0 2px;
 
 </string>
-         </property>
-         <property name="text">
-          <string>参数2</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="value_input_3">
-         <property name="minimumSize">
-          <size>
-           <width>360</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>360</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color:rgb(255,255,255);
+            </property>
+            <property name="text">
+             <string>参数2</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="value_input_11">
+            <property name="minimumSize">
+             <size>
+              <width>360</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>360</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:rgb(255,255,255);
 border-radius: 0 4px 4px 0;
 background: rgba(34, 36, 51, 1);
 padding:0 0 0 12px</string>
-         </property>
-         <property name="placeholderText">
-          <string>输入预估值</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_9">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QLabel" name="value_label_4">
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>80</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="sizeIncrement">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: 1px solid rgba(93, 94, 107, 1);
+            </property>
+            <property name="placeholderText">
+             <string>输入预估值</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="value_label_12">
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid rgba(93, 94, 107, 1);
 color:rgb(255,255,255);
 border-radius: 2px 0 0 2px;
 
 </string>
-         </property>
-         <property name="text">
-          <string>参数2</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="value_input_4">
-         <property name="minimumSize">
-          <size>
-           <width>360</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>360</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color:rgb(255,255,255);
+            </property>
+            <property name="text">
+             <string>参数2</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="value_input_12">
+            <property name="minimumSize">
+             <size>
+              <width>360</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>360</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:rgb(255,255,255);
 border-radius: 0 4px 4px 0;
 background: rgba(34, 36, 51, 1);
 padding:0 0 0 12px</string>
-         </property>
-         <property name="placeholderText">
-          <string>输入预估值</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>400</y>
-      <width>314</width>
-      <height>52</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_10">
-     <property name="spacing">
-      <number>60</number>
-     </property>
-     <item>
-      <widget class="QPushButton" name="clearnButton">
-       <property name="minimumSize">
-        <size>
-         <width>104</width>
-         <height>50</height>
-        </size>
+            </property>
+            <property name="placeholderText">
+             <string>输入预估值</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget_5">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>400</y>
+         <width>314</width>
+         <height>52</height>
+        </rect>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>104</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">
+       <layout class="QHBoxLayout" name="horizontalLayout_14">
+        <property name="spacing">
+         <number>60</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="clearnButton_3">
+          <property name="minimumSize">
+           <size>
+            <width>104</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>104</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
 border-radius: 6px;
 border: 1px solid rgb(255, 104, 97);            
 color: rgb(255, 104, 97);
 font-size: 16px;
 font-weight: 400;</string>
-       </property>
-       <property name="text">
-        <string>清除</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="calculateButton">
-       <property name="minimumSize">
-        <size>
-         <width>148</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>148</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">
+          </property>
+          <property name="text">
+           <string>清除</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="calculateButton_3">
+          <property name="minimumSize">
+           <size>
+            <width>148</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>148</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">
 border-radius: 6px;
 background: rgba(91, 133, 253, 1);
 font-size: 16px;
 font-weight: 400;
 color: rgba(255, 255, 255, 1);
 </string>
-       </property>
-       <property name="text">
-        <string>开始计算</string>
-       </property>
+          </property>
+          <property name="text">
+           <string>开始计算</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QLabel" name="message_label">
-    <property name="geometry">
-     <rect>
-      <x>545</x>
-      <y>40</y>
-      <width>561</width>
-      <height>641</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 0;
+      <widget class="QLabel" name="message_label_3">
+       <property name="geometry">
+        <rect>
+         <x>545</x>
+         <y>40</y>
+         <width>561</width>
+         <height>641</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 0;
 background: rgba(34, 36, 51, 1);
 padding:12px 0 12px 12px;
 color:rgb(255,255,255);
 font-size:16px</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Tab 2</string>
+     </attribute>
+     <widget class="QWidget" name="widget_5" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>971</width>
+        <height>691</height>
+       </rect>
+      </property>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>440</x>
+         <y>300</y>
+         <width>111</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(255,255,255);
+font-size:24px</string>
+       </property>
+       <property name="text">
+        <string>111111</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>-5</y>
+      <width>511</width>
+      <height>31</height>
+     </rect>
     </property>
     <property name="text">
      <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
     </property>
    </widget>
   </widget>

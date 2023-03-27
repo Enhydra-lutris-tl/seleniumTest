@@ -1,21 +1,12 @@
-QPushButton {
-    background-color:red;
-    color:yellow;
-    height:120;
-    font-size:60px;
+QPushButton[CD="C"]{
+border-radius: 6px;
+background: rgba(42, 43, 61, 1);
+padding: 10px 16px 10px 16px;
+color: rgba(255,255,255,1);
+font-size: 16px;
+font-weight: 500;
 }
-QPushButton[name="btn2"] {
-    background-color:blue;
-    color:yellow;
-    height:60;
-    width:120;
-    font-size:11px;
-}
-QPushButton[name="btn"]:hover {
-    background-color:yellow;
-    color:blue;
-    height:60;
-    width:120;
-    font-size:11px;
 
+QPushButton[CD="C"]:hover{
+    background: rgba(120, 133, 253, 0.5);
 }

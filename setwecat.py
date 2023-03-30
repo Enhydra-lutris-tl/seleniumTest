@@ -45,3 +45,9 @@ def main():
 # scheduler = BlockingScheduler()  # 实例化一个调度器
 # scheduler.add_job(main, "date", run_date=datetime(2023, 3, 6, 11, 23, 00))  # 添加任务
 # scheduler.start()
+import numpy as np
+from matplotlib import pyplot as plt
+x = np.linspace(0,1)
+y = np.exp(-x)*np.sin(4 * np.pi * x)
+plt.plot(x, y)
+pass
